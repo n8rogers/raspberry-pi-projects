@@ -11,7 +11,7 @@ GPIO.setup(light,GPIO.OUT)
 GPIO.setup(button, GPIO.IN)
 
 while True:
-    if !GPIO.input(button)
+    if GPIO.input(button) == False:
         GPIO.output(light,1)
 
     if GPIO.input(button):
