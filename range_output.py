@@ -44,7 +44,7 @@ try:
         else:
             GPIO.output(LIGHT,0)
         
-        time.sleep(0.1)
+        time.sleep(0.2)
 
 finally:
     print "Cleaning GPIO"
