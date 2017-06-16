@@ -43,6 +43,8 @@ try:
             lcd.message("Distance Measured\n" + str(get_distance()) + "cm")
         else:
             GPIO.output(LIGHT,0)
+        
+        time.sleep(0.1)
 
 finally:
     print "Cleaning GPIO"
