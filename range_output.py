@@ -17,11 +17,6 @@ GPIO.setup(ECHO,GPIO.IN)
 GPIO.setup(BUTTON, GPIO.IN)
 GPIO.setup(LIGHT, GPIO.OUT)
 
-while True:
-    if GPIO.input(BUTTON) == True:
-        lcd.clear()
-        lcd.message("Distance Measured\n" + get_distance())
-
 def get_distance():
     GPIO.output(TRIG, True)
     time.sleep(0.00001)
@@ -39,3 +34,8 @@ def get_distance():
     distance = round(distance, 2)
 
     return distance
+
+while True:
+    if GPIO.input(BUTTON) == True:
+        lcd.clear()
+        lcd.message("Distance Measured\n" + get_distance())
