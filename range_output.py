@@ -20,9 +20,9 @@ GPIO.setup(LIGHT, GPIO.OUT)
 while True:
     if GPIO.input(BUTTON) == True:
         lcd.clear()
-        lcd.message("Distance Measured\n" + get_distance)
+        lcd.message("Distance Measured\n" + get_distance())
 
-def get_distance:
+def get_distance():
     GPIO.output(TRIG, True)
     time.sleep(0.00001)
     GPIO.output(TRIG, False)
