@@ -40,7 +40,7 @@ try:
         if GPIO.input(BUTTON) == True:
             GPIO.output(LIGHT,1)
             lcd.clear()
-            lcd.message("Distance Measured\n" + str(get_distance())
+            lcd.message("Distance Measured\n" + str(get_distance()))
         else:
             GPIO.output(LIGHT,0)
 
