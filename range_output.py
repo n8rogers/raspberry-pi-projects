@@ -1,4 +1,4 @@
-from time import sleep
+import time
 from Adafruit_CharLCD import Adafruit_CharLCD
 import RPi.GPIO as GPIO
 
