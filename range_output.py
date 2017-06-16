@@ -35,9 +35,12 @@ def get_distance():
 
     return distance
 
-while True:
-    if GPIO.input(BUTTON) == True:
-        lcd.clear()
-        lcd.message("Distance Measured\n" + str(get_distance())
-
+try: 
+    while True:
+        if GPIO.input(BUTTON) == True:
+            lcd.clear()
+            lcd.message("Distance Measured\n" + str(get_distance())
+finally:
+    print "Cleaning GPIO"
+    GPIO.cleanup()
 
