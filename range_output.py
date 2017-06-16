@@ -38,4 +38,4 @@ def get_distance():
 while True:
     if GPIO.input(BUTTON) == True:
         lcd.clear()
-        lcd.message("Distance Measured\n" + get_distance())
+        lcd.message("Distance Measured\n" + str(get_distance())
