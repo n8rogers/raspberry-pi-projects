@@ -1,0 +1,24 @@
+Raspberry Pi Sensor Meter w/ LCD
+
+RPi GPIO
+#26 - LCD RS (Pin 4)
+#19 - LCD E (Pin 6)
+#13 - LCD D4 (Pin 11)
+#6 - LCD D5 (Pin 12)
+#5 - LCD D6 (Pin 13)
+#11 (SCLK) - LCD D7 (Pin 14)
+#21 - Photon D0
+#24 -> 1K ohm -> Sensor Echo
+
+Sensor
+VCC - 5.0v
+Trig - RPi #23
+Gnd -> Rpi Gnd -> 2K ohm -> RPi #24
+
+LCD
+Pin 1 - Gnd
+Pin 2 - 5.0v
+Pin 3 - Gnd
+Pin 5 - Gnd
+Pin 15 - 5.0v
+Pin 16 - Gnd
