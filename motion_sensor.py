@@ -5,8 +5,10 @@ Buzzer = 24
 Sensor = 23
 
 def setup():
-    global BuzzerPin = Buzzer
-    global SensorPin = Sensor
+    global BuzzerPin
+    BuzzerPin = Buzzer
+    global SensorPin
+    SensorPin = Sensor
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(BuzzerPin, GPIO.OUT)
     GPIO.output(BuzzerPin, GPIO.HIGH)
