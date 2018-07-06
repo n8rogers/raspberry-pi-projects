@@ -23,9 +23,20 @@ def destroy():
     GPIO.output(BuzzerPin, GPIO.HIGH)
     GPIO.cleanup()
 
+def beep(x):
+    on()
+    time.sleep(x)
+    off()
+    time.sleep(x)
+
+def loop():
+    while True:
+        beep(0.5)
+
 if __name__ == '__main__':
     setup()
     try:
         print 'Starting...'
+        loop()
     except KeyboardInterrupt:
         destroy()
