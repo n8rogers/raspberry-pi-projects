@@ -15,14 +15,14 @@ def setup():
 
 def buzz_on():
     print 'On'
-    GPIO.output(BuzzerPin, GPIO.LOW)
+    GPIO.output(BuzzerPin, True)
 
 def buzz_off():
     print 'Off'
-    GPIO.output(BuzzerPin, GPIO.HIGH)
+    GPIO.output(BuzzerPin, False)
 
 def destroy():
-    GPIO.output(BuzzerPin, GPIO.HIGH)
+    GPIO.output(BuzzerPin, False)
     GPIO.cleanup()
 
 def beep(x):
