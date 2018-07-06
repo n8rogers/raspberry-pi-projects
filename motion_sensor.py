@@ -24,9 +24,9 @@ def destroy():
     GPIO.cleanup()
 
 def beep(x):
-    on()
+    buzz_on()
     time.sleep(x)
-    off()
+    buzz_off()
     time.sleep(x)
 
 def loop():
