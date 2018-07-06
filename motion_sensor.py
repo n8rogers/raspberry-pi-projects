@@ -9,7 +9,7 @@ def setup():
     BuzzerPin = Buzzer
     global SensorPin
     SensorPin = Sensor
-    GPIO.setmode(GPIO.BOARD)
+    GPIO.setmode(GPIO.BCM)
     GPIO.setup(BuzzerPin, GPIO.OUT)
     GPIO.output(BuzzerPin, GPIO.HIGH)
 
