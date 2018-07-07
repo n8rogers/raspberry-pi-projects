@@ -34,7 +34,7 @@ def beep(x):
     time.sleep(x)
 
 def loop(x):
-    while x > 0
+    while x > 0:
         beep(0.5)
         x--
 
