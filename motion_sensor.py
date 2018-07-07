@@ -15,7 +15,7 @@ def setup():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(BuzzerPin, GPIO.OUT)
     GPIO.setup(SensorPin, GPIO.IN)
-    GPIO.setup(Door1Pin, GPIO.IN)
+    # GPIO.setup(Door1Pin, GPIO.IN)
     GPIO.output(BuzzerPin, GPIO.LOW)
 
 
@@ -53,10 +53,10 @@ if __name__ == '__main__':
                 # beep(0.5)
                 print 'Motion Detected!'
                 time.sleep(5)
-            if GPIO.input(Door1Pin):
-                loop(3)
-                print 'Door Opened'
-                time.sleep(2)
+            # if GPIO.input(Door1Pin):
+            #     loop(3)
+            #     print 'Door Opened'
+            #     time.sleep(2)
             time.sleep(0.1)
     except KeyboardInterrupt:
         destroy()
