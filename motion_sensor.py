@@ -35,7 +35,7 @@ def beep(x):
 
 def loop(x):
     while x > 0:
-        beep(0.25)
+        beep(0.1)
         x = x - 1
 
 if __name__ == '__main__':
@@ -45,8 +45,8 @@ if __name__ == '__main__':
         time.sleep(2)
         while True:
             if GPIO.input(23):
-                # loop(5)
-                beep(0.5)
+                loop(3)
+                # beep(0.5)
                 print 'Motion Detected!'
                 time.sleep(2)
             time.sleep(0.1)
