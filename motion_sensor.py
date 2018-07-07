@@ -14,11 +14,11 @@ def setup():
     GPIO.output(BuzzerPin, GPIO.HIGH)
 
 def buzz_on():
-    print 'On'
+    # print 'On'
     GPIO.output(BuzzerPin, True)
 
 def buzz_off():
-    print 'Off'
+    # print 'Off'
     GPIO.output(BuzzerPin, False)
 
 def destroy():
