@@ -48,7 +48,7 @@ if __name__ == '__main__':
                 loop(3)
                 # beep(0.5)
                 print 'Motion Detected!'
-                time.sleep(2)
+                time.sleep(5)
             time.sleep(0.1)
     except KeyboardInterrupt:
         destroy()
