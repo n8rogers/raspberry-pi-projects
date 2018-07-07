@@ -36,7 +36,7 @@ def beep(x):
 def loop(x):
     while x > 0:
         beep(0.5)
-        x--
+        x = x - 1
 
 if __name__ == '__main__':
     setup()
