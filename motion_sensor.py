@@ -12,7 +12,7 @@ def setup():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(BuzzerPin, GPIO.OUT)
     GPIO.setup(SensorPin, GPIO.IN)
-    GPIO.output(BuzzerPin, GPIO.HIGH)
+    GPIO.output(BuzzerPin, GPIO.LOW)
 
 
 def buzz_on():
@@ -45,7 +45,8 @@ if __name__ == '__main__':
         time.sleep(2)
         while True:
             if GPIO.input(23):
-                loop(5)
+                # loop(5)
+                beep(0.5)
                 print 'Motion Detected!'
                 time.sleep(5)
             time.sleep(0.1)
