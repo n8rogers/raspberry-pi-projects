@@ -1,46 +1,21 @@
 import RPi.GPIO as GPIO
-import time
+import time, buzzer
 
-Buzzer = 24
+BUZZER = 24
 Sensor = 23
-Door1 = 25
 
 def setup():
-    global BuzzerPin
+    global buzz
     global SensorPin
     global Door1Pin
-    BuzzerPin = Buzzer
+    GPIO.setmode(GPIO.BCM)
+    buzz = buzzer.Buzzer(GPIO, BUZZER)
     Door1Pin = Door1
     SensorPin = Sensor
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(BuzzerPin, GPIO.OUT)
     GPIO.setup(SensorPin, GPIO.IN)
-    # GPIO.setup(Door1Pin, GPIO.IN)
-    GPIO.output(BuzzerPin, GPIO.LOW)
-
-
-def buzz_on():
-    # print 'On'
-    GPIO.output(BuzzerPin, True)
-
-def buzz_off():
-    # print 'Off'
-    GPIO.output(BuzzerPin, False)
 
 def destroy():
-    GPIO.output(BuzzerPin, False)
     GPIO.cleanup()
-
-def beep(x):
-    buzz_on()
-    time.sleep(x)
-    buzz_off()
-    time.sleep(x)
-
-def loop(x):
-    while x > 0:
-        beep(0.1)
-        x = x - 1
 
 if __name__ == '__main__':
     setup()
@@ -49,14 +24,9 @@ if __name__ == '__main__':
         time.sleep(2)
         while True:
             if GPIO.input(SensorPin):
-                loop(3)
-                # beep(0.5)
+                buzz.beep_count(3, 0.1)
                 print 'Motion Detected!'
                 time.sleep(5)
-            # if GPIO.input(Door1Pin):
-            #     loop(3)
-            #     print 'Door Opened'
-            #     time.sleep(2)
             time.sleep(0.1)
     except KeyboardInterrupt:
         destroy()

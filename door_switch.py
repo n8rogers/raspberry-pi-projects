@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import time, buzzer
+import time, buzzer, switch
 
 SENSOR = 4
 BUZZER = 17
@@ -8,7 +8,7 @@ def setup():
     GPIO.setmode(GPIO.BCM)
     global buzz 
     buzz = buzzer.Buzzer(GPIO, BUZZER)
-    GPIO.setup(SENSOR, GPIO.IN)
+    switch = switch.Switch(GPIO, SENSOR)
 
 def destroy():
     GPIO.cleanup()
@@ -16,20 +16,20 @@ def destroy():
 def door_open():
     print("Door Open")
     while True:
-        if GPIO.input(SENSOR):
+        if switch.is_high():
             break
 
 def door_closed():
     print("Door Closed")
     while True:
-        if not GPIO.input(SENSOR):
+        if switch.is_low():
             break
 
 if __name__ == '__main__':
     setup()
     try:
         while True:
-            if GPIO.input(SENSOR):
+            if switch.is_high():
                 buzz.beep_count(1, 0.5)
                 door_closed()
             else:
