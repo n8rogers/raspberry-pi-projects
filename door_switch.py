@@ -17,9 +17,8 @@ if __name__ == '__main__':
     setup()
     try:
         closed = True
-        While closed:
+        while closed:
             if not GPIO.input(SENSOR):
                 buzz.beep_count(3, 0.1)
-
     except KeyboardInterrupt:
         destroy()
