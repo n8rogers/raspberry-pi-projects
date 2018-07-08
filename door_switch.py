@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import time, buzzer, switch
+import time, active_buzzer, switch
 
 SENSOR = 4
 BUZZER = 17
