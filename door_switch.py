@@ -32,6 +32,7 @@ if __name__ == '__main__':
             if GPIO.input(SENSOR):
                 door_closed()
             else:
+                buzz.beep_count(3, 0.1)
                 door_open()
     except:
         destroy()
