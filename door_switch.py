@@ -6,7 +6,8 @@ BUZZER = 17
 
 def setup():
     GPIO.setmode(GPIO.BCM)
-    global buzz = buzzer.Buzzer(GPIO, BUZZER)
+    global buzz 
+    buzz = buzzer.Buzzer(GPIO, BUZZER)
     GPIO.setup(SENSOR, GPIO.IN)
 
 def destroy():
