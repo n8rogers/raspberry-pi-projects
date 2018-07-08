@@ -10,19 +10,19 @@ class Buzzer:
         GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, GPIO.LOW)
 
-    def __buzz_on():
+    def __buzz_on(self):
         GPIO.output(pin, GPIO.HIGH)
 
-    def __buzz_off():
+    def __buzz_off(self):
         GPIO.output(pin, GPIO.LOW)
 
-    def beep(x):
-        __buzz_on()
+    def beep(self, x):
+        self.__buzz_on()
         time.sleep(x)
-        __buzz_off()
+        self.__buzz_off()
         time.sleep(x)
     
     def beep_count(self, count, duration):
         while count > 0:
-            beep(duration)
+            self.beep(duration)
             count = count - 1
