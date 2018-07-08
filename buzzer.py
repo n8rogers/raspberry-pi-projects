@@ -2,9 +2,11 @@ import time
 
 class Buzzer:
 
-    def __init__(self, GPIO, pin):
-        global GPIO = GPIO
-        global pin = pin
+    def __init__(self, GPIO, PIN):
+        global gpio
+        global pin
+        gpio = GPIO
+        pin = PIN
         GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, GPIO.LOW)
 
