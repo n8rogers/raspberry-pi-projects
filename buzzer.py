@@ -24,5 +24,3 @@ class Buzzer:
         while count > 0:
             beep(duration)
             count = count - 1
-
-    
