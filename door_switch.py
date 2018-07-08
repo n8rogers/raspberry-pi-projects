@@ -13,12 +13,25 @@ def setup():
 def destroy():
     GPIO.cleanup()
 
+def door_open():
+    print("Door Open")
+    while True:
+        if GPIO.input(SENSOR):
+            break
+
+def door_closed():
+    print("Door Closed")
+    while True:
+        if GPIO.input(SENSOR):
+            break
+
 if __name__ == '__main__':
     setup()
     try:
-        closed = True
-        while closed:
-            if not GPIO.input(SENSOR):
-                buzz.beep_count(3, 0.1)
-    except KeyboardInterrupt:
+        while True:
+            if GPIO.input(SENSOR):
+                door_closed()
+            else:
+                door_open()
+    except:
         destroy()
