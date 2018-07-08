@@ -12,10 +12,6 @@ def setup():
 def destroy():
     GPIO.cleanup()
 
-
-
-def closed():
-
 if __name__ == '__main__':
     setup()
     try:
