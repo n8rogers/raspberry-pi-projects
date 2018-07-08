@@ -22,7 +22,7 @@ def door_open():
 def door_closed():
     print("Door Closed")
     while True:
-        if GPIO.input(SENSOR):
+        if not GPIO.input(SENSOR):
             break
 
 if __name__ == '__main__':
